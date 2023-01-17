@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="main.css">
+
+<title>Flash Card Builder</title>
+<body>
+<img src="./images/skull.jpg"></head>
+<div class="container">
+<button class=button id="print-sources-btn">Print Sources</button>
+<textarea id="selected-sources-textbox" rows="4" cols="150"></textarea>
+<a id="download_link" download="my_exported_file.txt" href=”” >Download as Text File</a>
+</div>
+<div>
+<label for= "invitar">
+	invitar
+</label>
+<br/>
+<audio
+	id="invitar-sound"
+	controls
+	src="invitar.mp3">
+	Your browser does not support the <code>audio</code> element.
+</audio><br/>
+ <img class="banner" src="invitar_0.jpg" class="resize" data-selected="false" onclick=""> <img class="banner" src="invitar_1.jpg" class="resize"> <img class="banner" src="invitar_2.jpg" class="resize"> <img class="banner" src="invitar_3.jpg" class="resize"> <img class="banner" src="invitar_4.jpg" class="resize"> <img class="banner" src="invitar_5.jpg" class="resize"> <img class="banner" src="invitar_6.jpg" class="resize"> <img class="banner" src="invitar_7.jpg" class="resize"> <img class="banner" src="invitar_8.jpg" class="resize"> <img class="banner" src="invitar_9.jpg" class="resize"> <img class="banner" src="invitar_10.jpg" class="resize"> <img class="banner" src="invitar_11.jpg" class="resize"></div>
+<script>
+
+const printSourcesBtn = document.getElementById("print-sources-btn");
+const images = document.getElementsByClassName("banner");
+const selectedSourcesTextbox = document.getElementById("selected-sources-textbox");
+var html_images = document.getElementsByTagName("img");
+
+
+var text = 'Some data I want to export';
+var data = new Blob([text], {type: 'text/plain'});
+
+var url = window.URL.createObjectURL(data);
+
+document.getElementById('download_link').href = url;
+
+function enlarge(el) {
+
+    el.width = 200;
+
+}
+
+printSourcesBtn.addEventListener("click", function() {
+    let selectedSources = [];
+    for (let i = 0; i < images.length; i++) {
+        if (images[i].getAttribute("data-selected") === "true") {
+            let imageName = images[i].src.split("/");
+            console.log(images[i].src);
+            console.log(imageName.length)
+            console.log(imageName[imageName.length - 1])
+            let filename = imageName[imageName.length - 1];
+            selectedSources.push(filename);
+        }
+    }
+    selectedSourcesTextbox.value = selectedSources.join('\n');
+});
+
+
+
+for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", function() {
+        this.classList.toggle("selected");
+        if (this.getAttribute("data-selected") === "true") {
+            this.setAttribute("data-selected", "false");
+        } else {
+            this.setAttribute("data-selected", "true");
+        }
+
+
+    });
+}
+
+/*
+for (let i = 0; i < images.length; i++) {
+    console.log(images[i].src);
+    images[i].onclick = function() {
+        this.classList.toggle("selected");
+        if (this.getAttribute("data-selected") === "null") {
+            this.setAttribute("data-selected", "false");
+        } 
+        console.log(this.getAttribute("data_selected"));
+    };
+}
+*/
+</script>
+
+</body>
+</html>
+
+
+

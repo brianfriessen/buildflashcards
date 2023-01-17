@@ -1,0 +1,107 @@
+head {
+    border: 10px;
+       font-family: "Sitka Banner", serif;
+    font-size: 3em;
+    text-align: center;
+}
+body {
+    background-color: #0BA0D1;
+    font-family: 'Bangers', cursive;
+    font-size: 3em;
+    text-align: center;
+    display: inline-block;
+}
+/* border-radius: 100%; */
+label {
+    font-size: 1.1em;
+}
+header {
+    padding: 1% 0;
+    border-bottom: 10px double  #333;
+    text-align: center;
+    font-size: 1em;
+    transform: none;
+    box-shadow: none;
+    box-sizing: border-box;
+   // width: 50%;
+}
+
+
+print-sources-btn, selected-sources-textbox {
+    margin: auto;
+    display: block;
+}
+
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+div {
+  box-sizing: border-box;
+    display: inline-block;
+    background-color: #17E8E5;
+    margin: 40px;
+   text-align: center;
+    font-size: 1em;
+}
+
+.button {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+print-sources-btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+
+
+img.banner {
+/*    display: inline-block; */
+    Background-color: #26E8FF;
+ /* margin-right: auto;
+    margin-left: auto; */
+    width: 23%;
+    margin: 1%;
+    border: 5px solid darkblue;
+    vertical-align: middle;
+    transition: all 2s, transform .25s, box-shadow .25s;
+}
+
+img.banner:hover   {
+    box-shadow: 6px 6px 20px rgba(0,0,0,.6);
+    transform: scale(1.12);
+}
+img.banner:focus{
+    box-shadow: 12px 12px 25px;
+    rgba(0,0,0,.7);
+    width: 53%;
+    transform: none;
+}
+
+
+img.banner.selected {
+    border: 2px solid yellow;
+}
+
+selected {
+    border: 2px solid yellow;
+}
